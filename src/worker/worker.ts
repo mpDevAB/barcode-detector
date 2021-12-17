@@ -10,7 +10,7 @@ function detectWithJsQR(imageData : ImageData) : Array<DetectedBarcode> {
       imageData.data, 
       imageData.width, 
       imageData.height, 
-      { inversionAttempts: "onlyInvert" }
+      { inversionAttempts: "firstInvert" }
     );
 
     if (qrcode === null || qrcode.data === "") {

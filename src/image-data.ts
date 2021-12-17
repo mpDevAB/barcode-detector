@@ -111,11 +111,6 @@ export async function imageDataFrom(image : ImageBitmapSource) : Promise<ImageDa
 
   // Can't perform instanceof check when OffscreenCanvas not supported. Thus
   // need to feature detect first.
-  } else if ('OffscreenCanvas' in window && image instanceof OffscreenCanvas) {
-
-    const canvasCtx = image.getContext("2d")
-    return canvasCtx.getImageData(0, 0, image.width, image.height)
-
   } else if (image instanceof Blob) {
 
     return imageDataFromBlob(image)
